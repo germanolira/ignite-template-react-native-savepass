@@ -31,14 +31,36 @@ export function Home() {
   async function loadData() {
     const dataKey = '@savepass:logins';
     // Get asyncStorage data, use setSearchListData and setData
+
+    const response = await AsyncStorage.getItem(dataKey); // Pega os dados do asyncStorage
+
+    if (response) {
+      const parsedData = JSON.parse(response); // Converte os dados para JSON
+
+      setSearchListData(parsedData); // Seta os dados do asyncStorage
+      setData(parsedData); // Seta os dados do asyncStorage
+    }
   }
 
   function handleFilterLoginData() {
     // Filter results inside data, save with setSearchListData
+
+    const filteredData = searchListData.filter(data => {
+      if (data.service_name.includes(searchText)) {
+        return data;
+      }
+    });
+
+    setSearchListData(filteredData);
   }
 
   function handleChangeInputText(text: string) {
+    if (!text) {
+      setSearchListData(data);
+    }
+
     // Update searchText value
+    setSearchText(text);
   }
 
   useFocusEffect(useCallback(() => {
