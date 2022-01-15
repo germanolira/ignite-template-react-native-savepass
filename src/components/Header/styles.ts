@@ -31,7 +31,7 @@ export const Avatar = styled.Image`
 `;
 
 export const TextContainer = styled.View`
-  margin-left: 16px;
+  /* margin-left: 16px; */
 `;
 
 export const HelloMessage = styled.Text`

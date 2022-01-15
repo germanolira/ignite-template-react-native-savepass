@@ -46,7 +46,7 @@ export function Header({ user }: HeaderProps) {
       {user ? (
         <>
           <AboutUser>
-            <Avatar source={{ uri: user.avatar_url }} />
+            {/* <Avatar source={{ uri: user.avatar_url }} /> */}
 
             <TextContainer>
               <HelloMessage>
@@ -54,7 +54,8 @@ export function Header({ user }: HeaderProps) {
               </HelloMessage>
 
               <SecondaryMessage>
-                Sinta-se seguro aqui
+                {/* Sinta-se seguro aqui */}
+                Qual senha vai usar hoje?
               </SecondaryMessage>
             </TextContainer>
           </AboutUser>
